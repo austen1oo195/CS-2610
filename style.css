@@ -1,7 +1,7 @@
 #css file
 
 body {
-    background-color: lightblue;
+    background-color: black;
 }
 h3 {
   color: red;
@@ -12,10 +12,65 @@ h4  {
   font-size: 50px;
 }
 
+title {
+  color: black;
+  font-size: 50px;
+  font-family:monospace;
+}
+
+.home {
+  border: 2px dashed pink;
+  height: 100px;
+  width: 25%;
+  color: blue;
+  float: left;
+  background-color: black;
+
+}
 .top-bar {
   border: 2px solid green;
   height: 100px;
-  width: 100px;
-  
+  width: 25%;
+  color: blue;
+  float: left;
+  background-color: red;
+  top: 0;
+  left: 0;
+
+}
+
+.main-page {
+  border: 2px solid blue;
+  height: 100px;
+  width: 25%;
+  color: green;
+  font-family: cursive;
+  float: left;
+  background-color: yellow;
+
+
+
+}
+
+.middle {
+  border: 2px dashed yellow;
+  height: 100px;
+  width: 25%;
+  color: silver;
+  font-family: fantasy;
+  float: left;
+  background-color: black;
+}
+
+
+
+.bottom {
+  border: 4px dashed violet;
+  height: 200px;
+  width: 100%;
+  color: pink;
+  font-family: fantasy;
+  clear: both;
+  background-color: green;
 
 }
