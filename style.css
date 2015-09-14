@@ -3,9 +3,50 @@
 body {
     background-color: lightblue;
 }
-h3 {
-  color: red;
-}
-h4  {
-  color: blue;
-}
+
+
+/* MENU BAR STUFF */
+  #navlist {
+    padding: 0px 0; /* vertical, horizontal padding */
+    margin-left: 0;
+    font: bold 12px Verdana, sans-serif;
+  }
+
+  #navlist li {
+    list-style: none;
+    margin: 0; /* margin between list items */
+    display: inline;
+  }
+
+  #navlist li a {
+    padding: 8px 3em;
+    margin-left: 0px;
+    background: #b3cde0;
+    text-decoration: none;
+  }
+
+  #navlist li a:link { color: #448; }
+  #navlist li a:visited { color: black; }
+
+  #navlist li a:hover {
+    color: white;
+    background: #6497b1;
+  }
+
+  #navlist li a#current {
+    background: #6497b1;
+  }
+
+  #navcontainer {
+    position:fixed;
+    background-color: #99CCFF;
+    left: 0;
+    top: -5;
+    width: 100%;
+  }
+
+/* title formatting */
+  #title {
+    margin-top: 30px;
+    text-align: center;
+  }
