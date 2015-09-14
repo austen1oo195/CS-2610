@@ -50,3 +50,9 @@ td div p {
   top: 210px;
   left: 40px;
 }
+
+td div .com {
+  position: absolute;
+  top: 210px;
+  left: 160px;
+}
