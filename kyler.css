@@ -32,27 +32,34 @@ table {
 }
 
 table div {
-  height: 300px;
+  height: 300px;              /*creates a table with relative position*/
   width: 300px;
   color: white;
   margin: 20px;
-  position: relative;
+
+
 }
 
 td div img {
 
-  position: absolute;
-  left: 35px;
+ /* used padding to arrange images into correct position.*/
+/*  left: 35px;*/
+padding-left: 35px;
 }
 
 td div p {
-  position: absolute;
-  top: 210px;
-  left: 40px;
+   /*same principle as the images*/
+  padding-top: -10px;
+  padding-left: 40px;
+  display: inline;
+  /*top: 210px;
+  left: 40px;*/
 }
 
-td div .com {
-  position: absolute;
-  top: 210px;
-  left: 160px;
+td div .com {    /*comments work the same as the images and paragraphs*/
+  display: inline;
+  /*padding-top: 210px;
+  padding-left: 160px;*/
+  /*top: 210px;
+  left: 160px;*/
 }
