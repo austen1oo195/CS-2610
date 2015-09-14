@@ -1,0 +1,52 @@
+.insta-pic .pics div{
+  height: 1000px;
+  width: 1000px;
+  background-color: blue;
+  display: inline;
+
+
+}
+
+.insta-pic .pics div .one{
+
+  height: 1000px;
+  width: 1000px;
+  background-color: blue;
+  display: inline;
+  border: 50px solid red;
+
+}
+
+body {
+
+  background-color: #0066B1;
+}
+
+table {
+
+  height: 80%;
+  width: 100%;
+  display: inline;
+  color: white;
+  border: 2px solid white;
+}
+
+table div {
+  height: 300px;
+  width: 300px;
+  color: white;
+  margin: 20px;
+  position: relative;
+}
+
+td div img {
+
+  position: absolute;
+  left: 35px;
+}
+
+td div p {
+  position: absolute;
+  top: 210px;
+  left: 40px;
+}
