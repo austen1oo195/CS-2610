@@ -1,84 +1,52 @@
 #css file
 
-body {
-    background-color: black;
-}
-h3 {
-  color: red;
-  font-family:cursive;
-}
-h4  {
-  color: blue;
-  font-size: 50px;
-}
 
-title {
-  color: black;
-  font-size: 50px;
-  font-family:monospace;
-}
-
-.home {
-  border: 2px dashed pink;
-  height: 20px;
-  width: 10%;
-  color: blue;
-  float: left;
-  background-color: black;
-  display: none;
-
-}
-
-.logo {
-  height: 50px;
-  width: 25%;
-  background-color: blue;
-
-}
-.top-bar {
-  border: 2px solid green;
-  height: 50px;
-  width: 100%;
-  background-color: red;
-  top: 0;
-  left: 0;
-  box-shadow: blue;
-
-}
-
-.main-page {
-  border: 2px solid blue;
-  height: 20px;
-  width: 10%;
-  color: green;
-  font-family: cursive;
-  float: left;
-  background-color: yellow;
-  display: none;
+<<<<<<< HEAD
 
 
-}
+/* MENU BAR STUFF */
+  #navlist {
+    padding: 0px 0; /* vertical, horizontal padding */
+    margin-left: 0;
+    font: bold 12px Verdana, sans-serif;
+  }
 
-.middle {
-  border: 2px dashed yellow;
-  height: 20px;
-  width: 10%;
-  color: silver;
-  font-family: fantasy;
-  float: left;
-  background-color: black;
-  display: none;
-}
+  #navlist li {
+    list-style: none;
+    margin: 0; /* margin between list items */
+    display: inline;
+  }
 
+  #navlist li a {
+    padding: 8px 3em;
+    margin-left: 0px;
+    background: #b3cde0;
+    text-decoration: none;
+  }
 
+  #navlist li a:link { color: #448; }
+  #navlist li a:visited { color: black; }
 
-.bottom {
-  border: 4px dashed violet;
-  height: 200px;
-  width: 100%;
-  color: pink;
-  font-family: fantasy;
-  clear: both;
-  background-color: green;
+  #navlist li a:hover {
+    color: white;
+    background: #6497b1;
+  }
 
-}
+  #navlist li a#current {
+    background: #6497b1;
+  }
+
+  #navcontainer {
+    position:fixed;
+    background-color: #99CCFF;
+    left: 0;
+    top: -5;
+    width: 100%;
+  }
+
+/* title formatting */
+  #title {
+    margin-top: 30px;
+    text-align: center;
+  }
+>>>>>>> cdcb9e3f2196edc4c81c60d9012b28402f00df31
