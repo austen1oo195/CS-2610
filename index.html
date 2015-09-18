@@ -1,24 +1,29 @@
-<! This is a comment heading >
+<!DOCTYPE html>
+<html>
 
-<!DOCYPE html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="ben.css">
+    <title>Log in</title>
+  </head>
 
-<head>
-  <link rel = "stylesheet" href = "style.css">
-  <title> wireframe </title>
-</head>
+  <body>
+    <div class="header">
+      <h1>Login</h1>
+    </div>
 
-<body>
+    <div class="login">
+      <form name="login" action="index.html" method="post" accept-charset="utf-8">
+        <ul class="loginform">
+            <li><label for="usermail">Email</label>
+            <input type="email" name="usermail" placeholder="youremail@email.com" required></li>
+            <li><label for="password">Password</label>
+            <input type="password" name="password" placeholder="password" required></li>
+            <li>
+            <input type="submit" value="Login"></li>
+        </ul>
+      </form>
+    </div>
 
+  </body>
 
-  <div id="navcontainer">
-    <ul id="navlist">
-      <li id="active"><a href="index.html" id="current">Home</a></li>
-      <li><a href="Dashboard.html">Dashboard</a></li>
-      <li><a href="Profile.html">Profile</a></li>
-      <li><a href="Saved Searches.html">Saved Searches</a></li>
-    </ul>
-  </div>
-
-  <div id="title">
-    <h1> Home </h1>
-  </div>
+<html>
