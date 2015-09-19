@@ -20,10 +20,13 @@ body {
   margin-left: auto;
   margin-right: auto;
   width: 30%;
+  /*can't get height to work as a percentage*/
+
   list-style-type: none;
   text-align: center;
   background-color: lightblue;
-  border: 5px solid black;
+  border: 3px solid black;
+
 }
 
 .login ul{
