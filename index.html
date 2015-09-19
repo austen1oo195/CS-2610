@@ -1,23 +1,35 @@
-<! This is a comment heading >
+<!DOCTYPE html>
+<html>
 
-<!DOCYPE html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="ben.css">
+    <title>Hello Gorgeous!</title>
+  </head>
 
-<head>
-  <link rel = "stylesheet" href = "style.css">
-  <title> wireframe </title>
-</head>
+  <body>
+    <div class="header">
+      <h1>Welcome to Ninstagram!</h1>
+      <h5>A website dedicated to the death of brain cells across all peoples, faiths, and wifi networks.</h5>
+    </div>
 
-<body>
+    <div class="login">
+      <form name="login" action="home.html" method="post" accept-charset="utf-8">
+        <h1>Welcome Back!</h1>
+        <ul class="loginform">
+            <li class="email"><label for="usermail">Email</label>
+            <input type="email" name="usermail" placeholder="youremail@email.com" required></li>
 
-  <div id="navcontainer">
-    <ul id="navlist">
-      <li id="active"><a href="index.html" id="current">Home</a></li>
-      <li><a href="Dashboard.html">Dashboard</a></li>
-      <li><a href="Profile.html">Profile</a></li>
-      <li><a href="Saved Searches.html">Saved Searches</a></li>
-    </ul>
-  </div>
+            <li><label for="password">Password</label>
+            <input type="password" name="password" placeholder="password" required></li>
 
-  <div id="title">
-    <h1> Home </h1>
-  </div>
+            <li><input type="submit" value="Login"></li>
+        </ul>
+      </form>
+    </div>
+
+    <div class="register">
+      <p>First time? <a href="register.html">Sign Up Here!</a> We promise to be gentle.</p>
+    </div>
+  </body>
+
+<html>

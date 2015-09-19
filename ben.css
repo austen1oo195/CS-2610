@@ -1,0 +1,66 @@
+/*General Page Syling*/
+body {
+  background-color: white;
+}
+
+/*Title Header*/
+.header{
+  background-color: lightblue;
+  position: fixed;
+  padding-bottom: 25px;
+  top: 0px;
+  height: 50px;
+  border: 1px solid black;
+  width: 100%;
+}
+
+.header h1{
+  margin-bottom: 0px;
+}
+
+.header h5{
+  width: 100%;
+  position: fixed;
+  margin-top: 0px;
+  text-align: center;
+}
+
+/*Login Box*/
+.login{
+  position: relative;
+  margin-top: 150px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 350px;
+  height: 250px;
+
+  list-style-type: none;
+  text-align: center;
+  background-color: lightblue;
+  border: 3px solid black;
+
+}
+
+.login ul{
+  list-style-type: none;
+}
+
+.login h1{
+  position: absolute;
+  top: 25px;
+  text-align: center;
+}
+
+.loginform{
+  position: absolute;
+  bottom: 25px;
+}
+
+.email{
+  padding-left: 23px;
+}
+
+/*Registration*/
+.register {
+  text-align: center;
+}
