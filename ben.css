@@ -1,11 +1,15 @@
 /*General Page Syling*/
 body {
   background-color: white;
+  margin: 0;  /*gets rid of default margins/padding on page*/
+  padding: 0;
 }
 
 /*Title Header*/
 .header{
-  background-color: lightblue;
+  color: #fff;
+  text-align: center;
+  background-color: #444;
   position: fixed;
   padding-bottom: 25px;
   top: 0px;
@@ -36,7 +40,8 @@ body {
 
   list-style-type: none;
   text-align: center;
-  background-color: lightblue;
+  background-color: #444;
+  color: #fff;
   border: 3px solid black;
 
 }
