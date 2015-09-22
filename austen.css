@@ -56,8 +56,15 @@
     padding: 0;
   }
 
+/* search bar */
+  form {
+    position: relative;
+    text-align: right;
+    top: -50px;
+  }
 /* title formatting */
   #title {
     margin-top: 10px;
-    text-align: center;
+    margin-left: 10px;
+    text-align: left;
   }
