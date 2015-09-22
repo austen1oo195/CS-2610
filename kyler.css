@@ -1,10 +1,10 @@
+
+
 .insta-pic .pics div{
   height: 1000px;
   width: 1000px;
   background-color: #FFFFFF;
   display: inline;
-
-
 }
 
 .insta-pic .pics div .one{
@@ -41,18 +41,12 @@
   -moz-box-sizing: border-box;
   -o-box-sizing: border-box;
   box-sizing: border-box;
-  margin: 0;
-  padding: 0;
 }
 
 /*GENERAL*/
 
-html {
-  height: 100%;
-}
 
 body {
-  color: #FFFFFF;
   font-family: sans-serif;
   height: 100%;
   -webkit-font-smoothing: antialiased;
@@ -62,7 +56,6 @@ body {
 .wrap {
   height: auto !important;
   height: 100%;
-  margin-bottom: -100px;
   min-height: 100%;
   position: relative;
 }

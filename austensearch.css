@@ -1,0 +1,44 @@
+#css file
+
+/* *****************/
+/* Search page CSS */
+/* *****************/
+
+  /* search bar */
+  .searchBox {
+    float: right;
+    width: 230px;
+    margin-top: 10px;
+    margin-right: 10px;
+    text-align: right;
+  }
+  /* saved searches formatting */
+  .searches a{
+    text-decoration: none;
+    margin-left: 10px;
+    line-height: 1.4;
+    font-size: 20;
+    color: black;
+  }
+  /* title & div formatting */
+  .title {
+    float: left;
+    width: 210px;
+    margin: 10 0 0 10; /*top, right, bottom, left */
+    text-align: left;
+    font-size: 12;
+    height: 100%;
+  }
+  /* saved searches border */
+  .border {
+    position: absolute;
+    top: 50; bottom: 0; left: 0;
+    width: 210px;
+    height: auto;
+    border-right-style: solid;
+    border-right-width: 2px;
+    border-right-color: #444;
+  }
+  .results {
+    margin-top: 10px;
+  }

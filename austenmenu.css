@@ -1,0 +1,56 @@
+#css file
+
+/* *****************/
+/* Horizontal Menu */
+/* *****************/
+  .HorizontalMenu ul {
+    list-style: none;
+    background-color: #444;
+    text-align: left;
+    padding: 0;
+    margin: 0;
+  }
+  .HorizontalMenu li {
+    font-family: 'Oswald', sans-serif;
+    font-size: 1.2em;
+    line-height: 40px;
+    height: 40px;
+    border-bottom: 1px solid #888;
+  }
+
+  .HorizontalMenu a {
+    text-align: center;
+    text-decoration: none;
+    color: #fff;
+    display: block;
+    transition: .3s background-color;
+  }
+  .HorizontalMenu a:hover {
+    background-color: #005f5f;
+  }
+
+  .HorizontalMenu a.active {
+    background-color: #fff;
+    color: #444;
+    cursor: default;
+  }
+  .HorizontalMenu li {
+    width: 100px;
+    border-bottom: none;
+    height: 50px;
+    line-height: 50px;
+    font-size: 1em;
+  }
+  .HorizontalMenu li {
+    float: left;
+  }
+  .HorizontalMenu ul {
+    overflow: auto;
+  }
+  .HorizontalMenu {
+    background-color: #444;
+  }
+  * {
+    margin: 0;
+    padding: 0;
+  }
