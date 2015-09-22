@@ -4,15 +4,22 @@
 /* Search page CSS */
 /* *****************/
 
-  /* search bar */
-  .searchBox {
-    float: right;
-    width: 230px;
-    margin-top: 10px;
-    margin-right: 10px;
-    text-align: right;
+  * {
+    /* for whatever reason the page freaks out if I don't put something before
+    my actual css */
   }
-  /* saved searches formatting */
+  .results {
+    margin-top: 10px;
+  }
+  /* saved searches title & div formatting */
+  .saved {
+    float: left;
+    width: 180px !important;
+    margin: 10 10 0 10; /*top, right, bottom, left */
+    font-size: 12;
+    height: 100%;
+  }
+  /* saved searches item formatting */
   .searches a{
     text-decoration: none;
     margin-left: 10px;
@@ -20,25 +27,22 @@
     font-size: 20;
     color: black;
   }
-  /* title & div formatting */
-  .title {
-    float: left;
-    width: 210px;
-    margin: 10 0 0 10; /*top, right, bottom, left */
-    text-align: left;
-    font-size: 12;
-    height: 100%;
-  }
   /* saved searches border */
   .border {
     position: absolute;
     top: 50; bottom: 0; left: 0;
-    width: 210px;
+    width: 190px;
     height: auto;
     border-right-style: solid;
     border-right-width: 2px;
     border-right-color: #444;
   }
-  .results {
+  .SearchBox {
+    float: right;
+    width: 230px;
     margin-top: 10px;
+    margin-right: 10px;
+  }
+  .content {
+    margin-left: 190px;
   }
