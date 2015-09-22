@@ -1,7 +1,7 @@
 .insta-pic .pics div{
   height: 1000px;
   width: 1000px;
-  background-color: blue;
+  background-color: #FFFFFF;
   display: inline;
 
 
@@ -17,9 +17,12 @@
 
 }
 
+<<<<<<< HEAD
+=======
 body {
   background-color: white;
 }
+>>>>>>> ec0a7732401e58a486d47c4c61623e785e9aecfc
 
 /*CLASSES*/
 
@@ -56,7 +59,7 @@ html {
 }
 
 body {
-  color: #494949;
+  color: #FFFFFF;
   font-family: sans-serif;
   height: 100%;
   -webkit-font-smoothing: antialiased;

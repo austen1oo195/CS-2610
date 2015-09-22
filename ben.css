@@ -1,11 +1,15 @@
 /*General Page Syling*/
 body {
   background-color: white;
+  margin: 0;  /*gets rid of default margins/padding on page*/
+  padding: 0;
 }
 
 /*Title Header*/
 .header{
-  background-color: lightblue;
+  color: #fff;
+  text-align: center;
+  background-color: #444;
   position: fixed;
   padding-bottom: 25px;
   top: 0px;
@@ -25,41 +29,60 @@ body {
   text-align: center;
 }
 
-/*Login Box*/
+.box-outer {
+  width: 100%;
+  margin-top: 250px;
+}
+
+.box {
+  text-align: center;
+  border: 1px solid black;
+  width: 20%;
+  margin: 0 auto;
+}
+
 .login{
-  position: relative;
-  margin-top: 150px;
-  margin-left: auto;
-  margin-right: auto;
-  width: 350px;
-  height: 250px;
-
-  list-style-type: none;
-  text-align: center;
-  background-color: lightblue;
-  border: 3px solid black;
-
+  background-color: #444;
+  font-family: 'Oswald', sans-serif;
+  font-size: 1.2em;
+  line-height: 40px;
+  height: 40px;
+  border-bottom: 1px solid #888;
+  text-decoration: none;
+  color: #fff;
+  display: block;
+  transition: .3s background-color;
+  width: 100px;
+  margin: auto;
+  margin-bottom: 15px;
 }
 
-.login ul{
-  list-style-type: none;
+.login a:hover {
+  background-color: #005f5f;
 }
 
-.login h1{
-  margin-top: 40px;
-  text-align: center;
+.login a.active {
+  background-color: #fff;
+  color: #444;
+  cursor: default;
 }
 
-.loginform{
-  position: absolute;
-  bottom: 25px;
+.register{
+  background-color: #444;
+  font-family: 'Oswald', sans-serif;
+  font-size: 1.2em;
+  line-height: 40px;
+  height: 40px;
+  border-bottom: 1px solid #888;
+  text-decoration: none;
+  color: #fff;
+  display: block;
+  transition: .3s background-color;
+  width: 170px;
+  margin: auto;
 }
 
-.email{
-  padding-left: 23px;
-}
-
-/*Registration*/
-.register {
-  text-align: center;
+.paragraph{
+  width: 200px;
+  margin: auto;
 }
