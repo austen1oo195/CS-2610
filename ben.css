@@ -32,13 +32,15 @@ body {
 .box-outer {
   width: 100%;
   margin-top: 250px;
+
 }
 
 .box {
   text-align: center;
   border: 1px solid black;
-  width: 20%;
+  width: 200px;
   margin: 0 auto;
+  padding-top: 20px;
 }
 
 .login{
@@ -54,14 +56,13 @@ body {
   transition: .3s background-color;
   width: 100px;
   margin: auto;
-  margin-bottom: 15px;
 }
 
-.login a:hover {
+.box a:hover {
   background-color: #005f5f;
 }
 
-.login a.active {
+.box a.active {
   background-color: #fff;
   color: #444;
   cursor: default;
