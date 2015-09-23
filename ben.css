@@ -6,29 +6,19 @@ body {
 }
 
 /*Title Header*/
-.header{
-  color: #fff;
+.title {
+  margin-top: 0;
   text-align: center;
+  border-bottom: none;
+  font-size: 1em;
   background-color: #444;
-  position: fixed;
-  padding-bottom: 25px;
-  top: 0px;
-  height: 50px;
-  border: 1px solid black;
-  width: 100%;
+  color: #fff;
+  font-family: 'Oswald', sans-serif;
+  font-size: 1.2em;
 }
 
-.header h1{
-  margin-bottom: 0px;
-}
 
-.header h5{
-  width: 100%;
-  position: fixed;
-  margin-top: 0px;
-  text-align: center;
-}
-
+/*General*/
 .box-outer {
   width: 100%;
   margin-top: 250px;
@@ -36,25 +26,43 @@ body {
 }
 
 .box {
+  position: relative;
   text-align: center;
   border: 1px solid black;
-  width: 200px;
+  width: 570px;
+  height: 350px;;
   margin: 0 auto;
-  padding-top: 20px;
+  padding: 40px;
+  background-color: #444;
 }
 
-.login{
+/*Buttons*/
+.buttons{
+  position: absolute;
+  bottom: 40;
+  left: 225px;
+}
+
+.buttons a{
   background-color: #444;
   font-family: 'Oswald', sans-serif;
   font-size: 1.2em;
   line-height: 40px;
   height: 40px;
-  border-bottom: 1px solid #888;
+  border: 1px solid #888;
   text-decoration: none;
   color: #fff;
   display: block;
   transition: .3s background-color;
-  width: 100px;
+  width: 200px;
+}
+
+.login {
+  margin: auto;
+  margin-bottom: 10px;
+}
+
+.register {
   margin: auto;
 }
 
@@ -68,22 +76,13 @@ body {
   cursor: default;
 }
 
-.register{
-  background-color: #444;
+/*Box Text*/
+.greeting{
   font-family: 'Oswald', sans-serif;
-  font-size: 1.2em;
-  line-height: 40px;
-  height: 40px;
-  border-bottom: 1px solid #888;
-  text-decoration: none;
+  font-size: 1.0em;
+  width: 80%;
+  margin: auto;
+  margin-top: 0;
   color: #fff;
-  display: block;
-  transition: .3s background-color;
-  width: 170px;
-  margin: auto;
-}
-
-.paragraph{
-  width: 200px;
-  margin: auto;
+  margin-top: 50px;
 }
