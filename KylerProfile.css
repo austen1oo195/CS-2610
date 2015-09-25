@@ -1,0 +1,44 @@
+.face {
+  width: 250px;
+  margin-left: auto;
+  margin-right: auto;
+
+
+}
+
+.content {
+width: 400px;
+margin-left: auto;
+margin-right: auto;
+margin-top: 50px;
+
+}
+
+.name{
+  text-align: center;
+  float: right;
+}
+
+
+.you {
+  margin-top: 50px;
+  float: right;
+  text-align: center;
+
+
+}
+
+.nameBox {
+  background-color: #444;
+  color: white;
+  width:500px;
+  height:50px;
+}
+
+.youBox {
+  width: 500px;
+  height: 500px;
+  background-color: #444;
+  color: white;
+
+}
