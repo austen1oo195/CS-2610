@@ -33,12 +33,33 @@
     border-right-width: 2px;
     border-right-color: #444;
   }
-  .SearchBox {
-    float: right;
-    width: 230px;
-    margin-top: 10px;
-    margin-right: 10px;
-  }
+
   .content {
     margin-left: 190px;
   }
+
+  /* search box & button */
+
+.search {
+    float: right;
+    width: 274px;
+    margin-top: 10px;
+    margin-right: 99.5px;
+  }
+
+.SearchBox  {
+  padding:8px 15px;
+  background:#E3E3E3;
+  border:0px solid #dbdbdb;
+}
+.button {
+  padding:8px 15px;
+  left:-8px;
+  background-color:#444;
+  color:#fafafa;
+  transition: .3s background-color;
+  border: none;
+}
+.button:hover  {
+  background-color:#005f5f;
+}
