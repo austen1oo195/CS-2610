@@ -1,13 +1,7 @@
-#css file
-
 /* *****************/
 /* Search page CSS */
 /* *****************/
 
-  * {
-    /* for whatever reason the page freaks out if I don't put something before
-    my actual css */
-  }
   .results {
     margin-top: 10px;
   }
@@ -15,8 +9,8 @@
   .saved {
     float: left;
     width: 180px !important;
-    margin: 10 10 0 10; /*top, right, bottom, left */
-    font-size: 12;
+    margin: 10px 10px 0 10px; /*top, right, bottom, left */
+    font-size: 12px;
     height: 100%;
   }
   /* saved searches item formatting */
@@ -24,13 +18,15 @@
     text-decoration: none;
     margin-left: 10px;
     line-height: 1.4;
-    font-size: 20;
+    font-size: 20px;
     color: black;
   }
   /* saved searches border */
   .border {
     position: absolute;
-    top: 50; bottom: 0; left: 0;
+    top: 50px;
+    bottom: 0;
+    left: 0;
     width: 190px;
     height: auto;
     border-right-style: solid;

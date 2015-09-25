@@ -21,7 +21,11 @@ body {
 /*General*/
 .box-outer {
   width: 100%;
+<<<<<<< HEAD
   margin-top: 8%;
+=======
+  margin-top: 10%;
+>>>>>>> 45073695956007eb2ced745ff0816a208f57c5e8
 }
 
 .box {
@@ -39,7 +43,11 @@ body {
 /*Buttons*/
 .buttons{
   position: absolute;
+<<<<<<< HEAD
   bottom: 40;
+=======
+  bottom: 40px;
+>>>>>>> 45073695956007eb2ced745ff0816a208f57c5e8
   left: 185px;
 }
 
@@ -82,7 +90,13 @@ body {
   font-size: 1.0em;
   width: 80%;
   margin: auto;
+<<<<<<< HEAD
   margin-top: 0;
   color: #fff;
   margin-top: 50px;
+=======
+  color: #fff;
+  margin-top: 35px;
+  padding-bottom: 20px;
+>>>>>>> 45073695956007eb2ced745ff0816a208f57c5e8
 }
