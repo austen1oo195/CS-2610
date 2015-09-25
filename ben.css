@@ -21,8 +21,7 @@ body {
 /*General*/
 .box-outer {
   width: 100%;
-  margin-top: 250px;
-
+  margin-top: 8%;
 }
 
 .box {
@@ -30,9 +29,10 @@ body {
   text-align: center;
   border: 1px solid black;
   width: 570px;
-  height: 350px;;
+  height: 300px;;
   margin: 0 auto;
-  padding: 40px;
+  padding-top: 40px;
+  padding-bottom: 40px;
   background-color: #444;
 }
 
@@ -40,7 +40,7 @@ body {
 .buttons{
   position: absolute;
   bottom: 40;
-  left: 225px;
+  left: 185px;
 }
 
 .buttons a{
