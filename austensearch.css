@@ -2,7 +2,7 @@
 /* Search page CSS */
 /* *****************/
 
-  .results {
+  .Results {
     margin-top: 10px;
   }
   /* saved searches title & div formatting */
@@ -38,8 +38,7 @@
     margin-left: 190px;
   }
 
-  /* search box & button */
-
+  /* search bar & button */
 .search {
     float: right;
     width: 274px;

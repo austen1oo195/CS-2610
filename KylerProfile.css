@@ -3,7 +3,7 @@
   width: 250px;
   margin-left: auto;
   margin-right: auto;
-
+  margin-top: 10px;
 
 }
 
@@ -12,7 +12,7 @@
 width: 400px;
 margin-left: auto;
 margin-right: auto;
-margin-top: 50px;
+margin-top: 10px;
 
 }
 
@@ -24,15 +24,15 @@ margin-top: 50px;
 
 /* text for profile description */
 .you {
-  margin-top: 50px;
+  margin-top: 10px;
   float: right;
   text-align: center;
-
-
 }
 
 /* text box for name */
 .nameBox {
+  padding-top: 5px;
+  font-size: 35px;
   background-color: #444;
   color: white;
   width:500px;
@@ -42,8 +42,22 @@ margin-top: 50px;
 /* text box for profile description */
 .youBox {
   width: 500px;
-  height: 500px;
+  height: 300px;
   background-color: #444;
   color: white;
+}
 
+/* save button */
+.saveButton {
+  float: right;
+  width: 71px;
+  height: 31px;
+  background-color:#444;
+  color:#fafafa;
+  transition: .3s background-color;
+  border: none;
+}
+
+.saveButton:hover  {
+  background-color:#005f5f;
 }
