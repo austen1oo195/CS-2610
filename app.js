@@ -6,7 +6,7 @@ var express 	= require('express')
 
 var app = express();
 
-app.engine('handlebars', exphbs({defaultLayout: 'base'}));
+app.engine('handlebars', exphbs({defaultLayout: 'auth_base'}));
 app.set('view engine', 'handlebars');
 
 app.use(express.static(path.join(__dirname, 'public'))); //so it can find static files (like the css files)
@@ -14,16 +14,32 @@ app.use(express.static(path.join(__dirname, 'public'))); //so it can find static
 app.get('/', function(req, res) {
   res.render('index', {
 		title: 'Login',
-    welcome: 'Welcome to the site!'
+		layout: base
   })
 })
 
 app.get('/dashboard', function(req, res) {
   res.render('dashboard', {
 		active_dash: "active",
-		layout: 'auth_base',
+		css: "\\CSS\\kyler.css",
     title: 'Dashboard',
   })
+})
+
+app.get('/profile', function(req, res){
+	res.render('profile', {
+		active_profile: "active",
+		css: "\\CSS\\profile.css",
+		title: 'Profile'
+	})
+})
+
+app.get('/search', function(req, res){
+	res.render('search', {
+		search_active: "active",
+		css: "\\CSS\\search.css",
+		title: 'Search'
+	})
 })
 
 app.listen(port)

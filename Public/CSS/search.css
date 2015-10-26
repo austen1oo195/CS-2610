@@ -1,0 +1,158 @@
+/* *****************/
+/* Search page CSS */
+/* *****************/
+
+  .Results {
+    margin-top: 10px;
+  }
+  /* saved searches title & div formatting */
+  .saved {
+    float: left;
+    width: 180px !important;
+    margin: 10px 10px 0 10px; /*top, right, bottom, left */
+    font-size: 12px;
+    height: 100%;
+  }
+  /* saved searches item formatting */
+  .searches a{
+    text-decoration: none;
+    margin-left: 10px;
+    line-height: 1.4;
+    font-size: 20px;
+    color: black;
+  }
+  /* saved searches border */
+  .border {
+    position: absolute;
+    top: 50px;
+    bottom: 0;
+    left: 0;
+    width: 190px;
+    height: auto;
+    border-right-style: solid;
+    border-right-width: 2px;
+    border-right-color: #444;
+  }
+
+  .content {
+    margin-left: 190px;
+  }
+
+  /* search bar & button */
+.search {
+    float: right;
+    width: 274px;
+    margin-top: 10px;
+    margin-right: 99.5px;
+  }
+
+.SearchBox  {
+  padding:8px 15px;
+  background:#E3E3E3;
+  border:0px solid #dbdbdb;
+}
+.button {
+  padding:8px 15px;
+  left:-8px;
+  background-color:#444;
+  color:#fafafa;
+  transition: .3s background-color;
+  border: none;
+}
+.button:hover  {
+  background-color:#005f5f;
+}
+
+.insta-pic .pics div{
+  height: 1000px;
+  width: 1000px;
+  background-color: #FFFFFF;
+  display: inline;
+}
+
+.insta-pic .pics div .one{
+
+  height: 1000px;
+  width: 1000px;
+  background-color: blue;
+  display: inline;
+  border: 50px solid red;
+
+}
+
+/*CLASSES*/
+
+.clear:after, .squeeze:after {
+  display: block;
+  font-size: 0;
+  content: " ";
+  clear: both;
+}
+
+.squeeze {
+  position: relative;
+  margin: 0 auto;
+  padding: 0 20px;
+  width: 100%;
+  height: auto;
+  max-width: 1000px;
+}
+
+
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -o-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+/*GENERAL*/
+
+
+body {
+  height: 80%;
+  -webkit-font-smoothing: antialiased;
+  background-color: white;
+}
+
+.wrap {
+  height: auto !important;
+  height: 100%;
+  min-height: 100%;
+  position: relative;
+}
+
+/*BUTTONS*/
+
+.btn {
+  background: #FFF;
+  border: solid 1px #CCC;
+  height: 25px;
+  text-align: center;
+  width: 75px;
+}
+/*BOX*/
+
+.box-wrap {
+  margin: 50px 0;
+}
+
+.box {
+  width: 32%;
+  border: solid 1px #CCC;
+  float: left;
+  padding: 5px;
+}
+  .box:nth-child(n) {
+    margin-bottom: 2%;
+    margin-right: 2%;
+  }
+  .box:nth-child(3n) {
+    margin-right: 0;
+    margin-bottom: 0;
+  }
+  .box img {
+    display: block;
+    margin: 0 0 10px;
+    width: 100%;
+  }
