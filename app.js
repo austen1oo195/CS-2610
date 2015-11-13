@@ -42,31 +42,31 @@ app.get('/', function(req, res) {
   res.render('index', {
 		title: 'Login',
 		layout: 'base',
-    css: '\\CSS\\ben.css'
+    		css: '\\CSS\\ben.css'
   })
 })
 
 app.get('/dashboard', function(req, res) {
   res.render('dashboard', {
-    active_dashboard: "active",
+  	    	title: 'Dashboard',
+    		active_dashboard: "active",
 		css: "\\CSS\\kyler.css",
-    title: 'Dashboard',
   })
 })
 
 app.get('/profile', function(req, res) {
 	res.render('profile', {
-    active_profile: "active",
-		css: "\\CSS\\profile.css",
 		title: 'Profile'
+    		active_profile: "active",
+		css: "\\CSS\\profile.css",
 	})
 })
 
 app.get('/search', function(req, res){
 	res.render('search', {
-    active_search: "active",
-		css: "\\CSS\\search.css",
 		title: 'Search'
+		active_search: "active",
+		css: "\\CSS\\search.css",
 	})
 })
 
