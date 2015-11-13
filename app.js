@@ -42,14 +42,14 @@ app.get('/', function(req, res) {
   res.render('index', {
 		title: 'Login',
 		layout: 'base',
-    css: '\\CSS\\ben.css'
+    css: '\\CSS\\home.css'
   })
 })
 
 app.get('/dashboard', function(req, res) {
   res.render('dashboard', {
     active_dashboard: "active",
-		css: "\\CSS\\kyler.css",
+		css: "\\CSS\\image.css",
     title: 'Dashboard',
   })
 })

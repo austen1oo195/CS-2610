@@ -9,7 +9,7 @@
   .saved {
     float: left;
     width: 180px !important;
-    margin: 0px 10px 0 10px; /*top, right, bottom, left */
+    margin: 10px 10px 0 10px; /*top, right, bottom, left */
     font-size: 12px;
     height: 100%;
   }
@@ -43,7 +43,7 @@
 .search {
     float: right;
     width: 274px;
-    margin-top: 0px;
+    margin-top: 10px;
     margin-right: 10px;
   }
 
@@ -63,95 +63,3 @@
 .button:hover  {
   background-color:#005f5f;
 }
-
-.insta-pic .pics div{
-  height: 1000px;
-  width: 1000px;
-  background-color: #FFFFFF;
-  display: inline;
-}
-
-.insta-pic .pics div .one{
-
-  height: 1000px;
-  width: 1000px;
-  background-color: blue;
-  display: inline;
-  border: 50px solid red;
-
-}
-
-/*CLASSES*/
-
-.clear:after, .squeeze:after {
-  display: block;
-  font-size: 0;
-  content: " ";
-  clear: both;
-}
-
-.squeeze {
-  position: relative;
-  margin: 0 auto;
-  padding: 0 20px;
-  width: 100%;
-  height: auto;
-  max-width: 1000px;
-}
-
-* {
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  -o-box-sizing: border-box;
-  box-sizing: border-box;
-}
-
-/*GENERAL*/
-
-body {
-  height: 80%;
-  -webkit-font-smoothing: antialiased;
-  background-color: white;
-}
-
-.wrap {
-  height: auto !important;
-  height: 100%;
-  min-height: 100%;
-  position: relative;
-}
-
-/*BUTTONS*/
-
-.btn {
-  background: #FFF;
-  border: solid 1px #CCC;
-  height: 25px;
-  text-align: center;
-  width: 75px;
-}
-/*BOX*/
-
-.box-wrap {
-  margin: 50px 0;
-}
-
-.box {
-  width: 32%;
-  border: solid 1px #CCC;
-  float: left;
-  padding: 5px;
-}
-  .box:nth-child(n) {
-    margin-bottom: 2%;
-    margin-right: 2%;
-  }
-  .box:nth-child(3n) {
-    margin-right: 0;
-    margin-bottom: 0;
-  }
-  .box img {
-    display: block;
-    margin: 0 0 10px;
-    width: 100%;
-  }
