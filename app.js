@@ -56,17 +56,17 @@ app.get('/dashboard', function(req, res) {
 
 app.get('/profile', function(req, res) {
 	res.render('profile', {
+		title: 'Profile',
     active_profile: "active",
 		css: "\\CSS\\profile.css",
-		title: 'Profile'
 	})
 })
 
 app.get('/search', function(req, res){
 	res.render('search', {
-    active_search: "active",
-		css: "\\CSS\\search.css",
 		title: 'Search'
+		active_search: "active",
+		css: "\\CSS\\search.css",
 	})
 })
 
