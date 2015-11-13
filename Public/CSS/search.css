@@ -9,7 +9,7 @@
   .saved {
     float: left;
     width: 180px !important;
-    margin: 10px 10px 0 10px; /*top, right, bottom, left */
+    margin: 0px 10px 0 10px; /*top, right, bottom, left */
     font-size: 12px;
     height: 100%;
   }
@@ -21,13 +21,14 @@
     font-size: 20px;
     color: black;
   }
-  /* saved searches border */
+  /* saved searches border*/
   .border {
     position: absolute;
     top: 50px;
     bottom: 0;
     left: 0;
-    width: 190px;
+    width: 2px;
+    margin-left: 183px;
     height: auto;
     border-right-style: solid;
     border-right-width: 2px;
@@ -42,8 +43,8 @@
 .search {
     float: right;
     width: 274px;
-    margin-top: 10px;
-    margin-right: 99.5px;
+    margin-top: 0px;
+    margin-right: 10px;
   }
 
 .SearchBox  {
@@ -98,7 +99,6 @@
   max-width: 1000px;
 }
 
-
 * {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -107,7 +107,6 @@
 }
 
 /*GENERAL*/
-
 
 body {
   height: 80%;

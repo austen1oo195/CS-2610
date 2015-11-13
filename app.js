@@ -48,15 +48,15 @@ app.get('/', function(req, res) {
 
 app.get('/dashboard', function(req, res) {
   res.render('dashboard', {
-		active_dash: "active",
+    active_dashboard: "active",
 		css: "\\CSS\\kyler.css",
     title: 'Dashboard',
   })
 })
 
-app.get('/profile', function(req, res){
+app.get('/profile', function(req, res) {
 	res.render('profile', {
-		active_profile: "active",
+    active_profile: "active",
 		css: "\\CSS\\profile.css",
 		title: 'Profile'
 	})
@@ -64,7 +64,7 @@ app.get('/profile', function(req, res){
 
 app.get('/search', function(req, res){
 	res.render('search', {
-		search_active: "active",
+    active_search: "active",
 		css: "\\CSS\\search.css",
 		title: 'Search'
 	})
