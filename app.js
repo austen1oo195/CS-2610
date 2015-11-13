@@ -64,7 +64,7 @@ app.get('/profile', function(req, res) {
 
 app.get('/search', function(req, res){
 	res.render('search', {
-		title: 'Search'
+		title: 'Search',
 		active_search: "active",
 		css: "\\CSS\\search.css",
 	})
