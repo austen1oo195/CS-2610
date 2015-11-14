@@ -95,11 +95,21 @@ app.get('/dashboard', function(req, res) {
 
 
 app.get('/profile', function(req, res) {
-	res.render('profile', {
-		title: 'Profile',
-    active_profile: "active",
-		css: "\\CSS\\profile.css",
-	});
+  var options = {
+    url: 'https://api.instagram.com/v1/users/self/?access_token='
+      + req.session.access_token
+  }
+
+  request.get(options, function(error, response, body){
+    var feed = JSON.parse(body);
+    
+  	res.render('profile', {
+      active_profile: "active",
+  		css: "\\CSS\\profile.css",
+      title: 'Profile',
+      feed: feed.data
+  	});
+  });
 });
 
 
