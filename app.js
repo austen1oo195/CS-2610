@@ -2,9 +2,10 @@ var express 	  = require('express')
 var exphbs		  = require('express-handlebars')
 var bodyParser  = require('body-parser')
 var querystring = require('querystring')
-var request = require('request')
+var request     = require('request')
 var session     = require('express-session')
 var path        = require('path') //needed for static path
+var cfg         = require('./config')
 var router 	    = express.Router();
 var port        = 3000
 
@@ -17,13 +18,20 @@ app.use(bodyParser.urlencoded({extended: false}))
 
 app.use(express.static(path.join(__dirname, 'public'))); //so it can find static files (like the css files)
 
-app.use(session({   //WHAT ARE YOU???
+app.use(session({
   cookieName: 'session',
   secret: 'alsdkfjaclskdjf',
   resave: false,
   saveUninitialized: true
 }))
-/*
+
+app.get('/sign_out', function(req, res){
+  session.access_token = 0;
+  console.log(';alskdfj')
+  res.redirect('/')
+  //output sign out successful when that gets resolved
+})
+
 app.get('/authorize', function(req, res){
   var qs = {
     client_id: cfg.client_id,
@@ -37,7 +45,28 @@ app.get('/authorize', function(req, res){
 
   res.redirect(url)
 })
-*/
+
+app.get('/auth/finalize', function(req, res) {
+  var post_data = {
+    client_id: cfg.client_id,
+    client_secret: cfg.client_secret,
+    redirect_uri: cfg.redirect_uri,
+    grant_type: 'authorization_code',
+    code: req.query.code
+  }
+
+  var options = {
+    url: 'https://api.instagram.com/oauth/access_token',
+    form: post_data
+  }
+
+  request.post(options, function(error, response, body) {
+    var data = JSON.parse(body)
+    req.session.access_token = data.access_token
+    res.redirect('/dashboard')
+  })
+})
+
 app.get('/', function(req, res) {
   res.render('index', {
 		title: 'Login',
