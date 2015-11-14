@@ -1,19 +1,19 @@
-var express 	  = require('express')
-var exphbs		  = require('express-handlebars')
-var bodyParser  = require('body-parser')
-var querystring = require('querystring')
-var request = require('request')
-var session     = require('express-session')
-var path        = require('path') //needed for static path
+var express 	  = require('express');
+var exphbs		  = require('express-handlebars');
+var bodyParser  = require('body-parser');
+var querystring = require('querystring');
+var request = require('request');
+var session     = require('express-session');
+var path        = require('path'); //needed for static path
 var router 	    = express.Router();
-var port        = 3000
+var port        = 3000;
 
-var app = express()
+var app = express();
 
 app.engine('handlebars', exphbs({defaultLayout: 'auth_base'}));
 app.set('view engine', 'handlebars');
 
-app.use(bodyParser.urlencoded({extended: false}))
+app.use(bodyParser.urlencoded({extended: false}));
 
 app.use(express.static(path.join(__dirname, 'public'))); //so it can find static files (like the css files)
 
@@ -22,7 +22,7 @@ app.use(session({   //WHAT ARE YOU???
   secret: 'alsdkfjaclskdjf',
   resave: false,
   saveUninitialized: true
-}))
+}));
 /*
 app.get('/authorize', function(req, res){
   var qs = {
@@ -43,46 +43,57 @@ app.get('/', function(req, res) {
 		title: 'Login',
 		layout: 'base',
     css: '\\CSS\\home.css'
-  })
-})
+  });
+});
 
 app.get('/dashboard', function(req, res) {
-  res.render('dashboard', {
-    active_dashboard: "active",
-		css: "\\CSS\\image.css",
-    title: 'Dashboard',
-  })
-})
+
+
+    var options = {
+      url: 'https://api.instagram.com/v1/users/self/feed?access_token=530494491.1677ed0.fac95ac38b194981b3d40c355513f5b5'
+    };
+    request.get(options, function(error, response, body){
+      var feed = JSON.parse(body);
+
+      res.render('dashboard', {
+        active_dashboard: "active",
+    		css: "\\CSS\\image.css",
+        title: 'Dashboard',
+        feed: feed.data 
+      });
+    });
+});
+
 
 app.get('/profile', function(req, res) {
 	res.render('profile', {
 		title: 'Profile',
     active_profile: "active",
 		css: "\\CSS\\profile.css",
-	})
-})
+	});
+});
 
 app.get('/search', function(req, res){
 	res.render('search', {
 		title: 'Search',
 		active_search: "active",
 		css: "\\CSS\\search.css",
-	})
-})
+	});
+});
 
 app.post('/search', function(req, res){
-  var tagName  = req.body.query
+  var tagName  = req.body.query;
 
   var options = {
     url: 'https://api.instagram.com/v1/tags' + tagName + '/media/recent?access_token' + req.session.access_token
-  }
+  };
 
   request.get(options, function(error, response, body){
-    console.log(body)
-  })
-  res.send('good post')
-})
+    console.log(body);
+  });
+  res.send('good post');
+});
 
-app.listen(port)
+app.listen(port);
 
-console.log('Server running at http:127.0.0.1:' + port + '/')
+console.log('Server running at http:127.0.0.1:' + port + '/');
