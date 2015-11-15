@@ -11,7 +11,6 @@ Router.get('/sign_out', function(req, res){
     instead of json.
   */
   req.session.access_token = 'asdf';
-  console.log('booya')
   res.redirect('/')
   //need to insert popup box confirming sign-out
 })

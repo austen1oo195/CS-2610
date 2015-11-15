@@ -31,7 +31,16 @@ app.use('/user', userRoutes);
 app.use(function(err, req, res, next) {
     res.status(err.status || 500);
     console.log(err)
-    res.redirect('/')
+    if(err == "The access_token provided is invalid."){
+      res.redirect('/')
+    }
+    else{
+      res.render('error', {
+        layout: 'base',
+        message: err
+      })
+    }
+
 });
 
 app.listen(port);
