@@ -18,17 +18,28 @@ app.use(bodyParser.urlencoded({extended: false}));
 
 app.use(express.static(path.join(__dirname, 'public'))); //so it can find static files (like the css files)
 
+//check if access token is still valid, if not then redirect to the home pages
+//app.use(if(req.access_token))
+
 app.use(session({
   cookieName: 'session',
   secret: 'alsdkfjaclskdjf',
   resave: false,
   saveUninitialized: true
-
 }))
 
+app.use('/dashboard', function(req, res, next) {
+  console.log(req.session)
+  if(req.session.access_token == ""){
+    console.log("You'll Never Make It This Far")
+    res.redirect('/')
+  }
+  next()
+});
+
 app.get('/sign_out', function(req, res){
-  req.session.access_token = "";
-  console.log('successful sign out')
+  req.session.access_token = ""
+  console.log(req.session, 'successful sign out')
   res.redirect('/')
   //output sign out successful when that gets resolved
 })
@@ -39,7 +50,7 @@ app.get('/authorize', function(req, res){
     redirect_uri: cfg.redirect_uri,
     response_type: 'code'
   }
-  //client_id=2261696381.1677ed0.1992891961cf4e42830657329b06665c&http://localhost:3000/auth/finalize
+
   var query = querystring.stringify(qs)
   var url = 'https://api.instagram.com/oauth/authorize/?' + query
 
@@ -47,6 +58,10 @@ app.get('/authorize', function(req, res){
 })
 
 app.get('/auth/finalize', function(req, res) {
+  if (req.query.error == 'access_denied') {
+    return res.redirect('/')
+  }
+
   var post_data = {
     client_id: cfg.client_id,
     client_secret: cfg.client_secret,
@@ -61,7 +76,12 @@ app.get('/auth/finalize', function(req, res) {
   }
 
   request.post(options, function(error, response, body) {
+    try {
     var data = JSON.parse(body)
+  }
+  catch(err) {
+    return next(err)
+  }
     req.session.access_token = data.access_token
     res.redirect('/dashboard')
   })
@@ -75,12 +95,21 @@ app.get('/', function(req, res) {
   });
 });
 
-app.get('/dashboard', function(req, res) {
+app.get('/dashboard', function(req, res, next) {
     var options = {
       url: 'https://api.instagram.com/v1/users/self/feed?access_token=' + req.session.access_token
     };
+
     request.get(options, function(error, response, body){
-      var feed = JSON.parse(body);
+      try {
+      var feed = JSON.parse(body)
+      if (feed.meta.code > 200) {
+        return next(feed.meta.error_message);
+      }
+    }
+    catch(err) {
+      return next(err)
+    }
 
       res.render('dashboard', {
         active_dashboard: "active",
@@ -121,6 +150,15 @@ app.post('/search', function(req, res){
   res.send('good post');
 });
 
+app.use(function(err, req, res, next) {
+    res.status(err.status || 500);
+    res.render('error', {
+        layout: 'base',
+        message: err,
+        error: {}
+    });
+});
+
 app.listen(port);
 
-console.log('Server running at http:127.0.0.1:' + port + '/');
+console.log('Server running at http:127.0.0.1:' + port + '/')
