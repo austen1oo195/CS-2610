@@ -5,6 +5,7 @@ var session     = require('express-session')
 var path        = require('path') //needed for static path
 var homeRoutes  = require('./Routes/homeRoutes.js')
 var userRoutes  = require('./Routes/userRoutes.js')
+var request     = require('request')
 var port        = 3000;
 
 var app = express();
@@ -23,25 +24,14 @@ app.use(session({
   })
 )
 
-app.use('/dashboard', function(req, res, next) {
-  console.log(req.session)
-  if(req.session.access_token == ""){
-    console.log("You'll Never Make It This Far")
-    res.redirect('/')
-  }
-  next()
-});
-
 app.use('/', homeRoutes);
 app.use('/user', userRoutes);
 
+//middleware that catches errors. console.log()'s the error and redirects to home page '/'
 app.use(function(err, req, res, next) {
     res.status(err.status || 500);
-    res.render('error', {
-        layout: 'base',
-        message: err,
-        error: {}
-    });
+    console.log(err)
+    res.redirect('/')
 });
 
 app.listen(port);

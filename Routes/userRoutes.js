@@ -2,7 +2,7 @@ var express = require('express');
 var request = require('request')
 var Router  = express.Router();
 
-Router.get('/dashboard', function(req, res) {
+Router.get('/dashboard', function(req, res, next) {
   var options = {
     url: 'https://api.instagram.com/v1/users/self/feed?access_token=' +
       req.session.access_token
@@ -28,14 +28,21 @@ Router.get('/dashboard', function(req, res) {
   });
 });
 
-Router.get('/profile', function(req, res) {
-  var options = {
-    url: 'https://api.instagram.com/v1/users/self/?access_token='
-      + req.session.access_token
-  }
+Router.get('/profile', function(req, res, next) {
+    var options = {
+      url: 'https://api.instagram.com/v1/users/self/?access_token='
+        + req.session.access_token
+    }
 
   request.get(options, function(error, response, body){
-    var feed = JSON.parse(body);
+    try {
+    var feed = JSON.parse(body)
+    if (feed.meta.code > 200) {
+      return next(feed.meta.error_message);
+    }
+  }catch(err) {
+    return next(err)
+  }
 
   	res.render('profile', {
       active_profile: "active",
@@ -46,15 +53,34 @@ Router.get('/profile', function(req, res) {
   });
 });
 
-Router.get('/search', function(req, res){
-	res.render('search', {
-    active_search: "active",
-    css: "\\CSS\\search.css",
-		title: 'Search',
+Router.get('/search', function(req, res, next){
+  //options.url is used to make a request to that url with the access token to make sure
+  //the token still valid. We don't actually need the info it will return, just need to secret
+  //if it throws an error saying the token is invalid.
+  var options = {
+    url: 'https://api.instagram.com/v1/users/self/?access_token='
+      + req.session.access_token
+  }
+
+  request.get(options, function(error, response, body){
+    try {
+      var feed = JSON.parse(body)
+      if (feed.meta.code > 200) {
+        return next(feed.meta.error_message);
+      }
+    }catch(err) {
+      return next(err)
+    }
+
+  	res.render('search', {
+      active_search: "active",
+      css: "\\CSS\\search.css",
+  		title: 'Search',
+    });
 	});
 });
 
-Router.post('/search', function(req, res){
+Router.post('/search', function(req, res, next){
   var tagName  = req.body.query;
   var options = {
     url: 'https://api.instagram.com/v1/tags/' + tagName +
@@ -62,7 +88,14 @@ Router.post('/search', function(req, res){
   };
 
   request.get(options, function(error, response, body){
-    var feed = JSON.parse(body);
+    try{
+      var feed = JSON.parse(body);
+      if(feed.meta.code > 200){
+        return next(feed.meta.error_message);
+      }
+    }catch(err){
+      return next(err)
+    }
 
     res.render('search', {
       active_search: "active",
@@ -70,8 +103,6 @@ Router.post('/search', function(req, res){
       title: 'Search',
       feed: feed.data
     });
-
   });
 });
-
 module.exports = Router;

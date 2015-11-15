@@ -5,10 +5,15 @@ var querystring = require('querystring')
 var Router      = express.Router();
 
 Router.get('/sign_out', function(req, res){
-  req.session.access_token = "";
-  console.log('successful sign out')
+  /*set access token to something obviously invalid so it will throw erros.
+    I couldn't get a blank string to work as the access token because it
+    would simply read that the token isn't there and try to return html
+    instead of json.
+  */
+  req.session.access_token = 'asdf';
+  console.log('booya')
   res.redirect('/')
-  //output sign out successful when that gets resolved
+  //need to insert popup box confirming sign-out
 })
 
 Router.get('/authorize', function(req, res){
@@ -17,7 +22,7 @@ Router.get('/authorize', function(req, res){
     redirect_uri: cfg.redirect_uri,
     response_type: 'code'
   }
-  //client_id=2261696381.1677ed0.1992891961cf4e42830657329b06665c&http://localhost:3000/auth/finalize
+
   var query = querystring.stringify(qs)
   var url = 'https://api.instagram.com/oauth/authorize/?' + query
 
