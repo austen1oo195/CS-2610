@@ -1,61 +1,90 @@
 /* profile picture */
 .face {
-  width: 250px;
+  text-align: center;
+  margin-top: 50px;
+}
+
+/* content div for name/user/url/bio */
+.content {
+  /*width: 400px;*/
   margin-left: auto;
   margin-right: auto;
   margin-top: 10px;
-
+  text-align: center;
 }
 
-/* content div for name and info */
-.content {
-width: 400px;
-margin-left: auto;
-margin-right: auto;
-margin-top: 10px;
-
-}
-
-/* text for name */
+/* text 'Name:' */
 .name{
-  text-align: center;
-  float: right;
+  font-size: 25px;
+  margin-left: -440px;
 }
 
-/* text for profile description */
-.you {
-  margin-top: 10px;
-  float: right;
-  text-align: center;
+/* text 'Username:' */
+.user{
+  font-size: 25px;
+  margin-left: -450px;
+}
+
+/* text 'Url:' */
+.url {
+  font-size: 25px;
+  margin-left: -462px;
+}
+
+/* text 'Bio:' */
+.bio {
+  font-size: 25px;
 }
 
 /* text box for name */
 .nameBox {
-  padding-top: 5px;
-  font-size: 35px;
+  font-size: 25px;
   background-color: #444;
   color: white;
   width:500px;
-  height:50px;
+  height:29px;
+  resize: none;
 }
 
-/* text box for profile description */
-.youBox {
-  width: 500px;
-  height: 300px;
+/* text for username */
+.userBox {
+  font-size: 25px;
   background-color: #444;
   color: white;
+  width: 500px;
+  height:29px;
+  resize: none;
+}
+
+/* text box for url */
+.urlBox {
+  font-size: 25px;
+  background-color: #444;
+  color: white;
+  width: 500px;
+  height:29px;
+  resize: none;
+}
+
+/* text box for bio */
+.bioBox {
+  width: 500px;
+  height: 300px;
+  font-size: 25px;
+  background-color: #444;
+  color: white;
+  resize: none;
 }
 
 /* save button */
 .saveButton {
-  float: right;
-  width: 71px;
+  width: 120px;
   height: 31px;
   background-color:#444;
   color:#fafafa;
   transition: .3s background-color;
   border: none;
+  margin-left: 380px;
 }
 
 .saveButton:hover  {
