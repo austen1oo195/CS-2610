@@ -48,18 +48,17 @@ Router.get('/auth/finalize', function(req, res) {
     var user = data.user
 
     req.session.access_token = data.access_token
-    req.session.userId = user.id
+    req.session.userId = user._id = user.id
 
-    user._id = user.id
     delete user.id
-    //insert into database
+    //find person in the database. If they aren't found in the database from
+    //the user id, then insert them into the database.
     User.find(user._id, function(document){
       if(!document){
         User.insert(user, function(result){
-          
+
           //just for verification in console that everything is good. Can be
           //deleted later once everything is working.
-          console.log(result)
           console.log(data.user)
 
           res.redirect('/user/dashboard')

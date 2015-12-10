@@ -1,15 +1,15 @@
 <div class="face">
-  <img src="{{feed.profile_picture}}" kalt = "" />
+  <img src="{{profile.profile_picture}}" kalt = "" />
 </div>
 
 <form id="profile"class="content" action="" method="post">
   <p class="name">Name: </p>
-  <textarea form="profile" class="nameBox" name="full_name">{{feed.full_name}}</textarea>
+  <textarea form="profile" class="nameBox" name="full_name">{{profile.full_name}}</textarea>
   <p class="user">User: </p>
-  <textarea form="profile" class="userBox" name="username">{{feed.username}}</textarea>
+  <textarea form="profile" class="userBox" name="username">{{profile.username}}</textarea>
   <p class="url">Url: </p>
-  <textarea form="profile" class="urlBox" name="website">{{feed.website}}</textarea>
+  <textarea form="profile" class="urlBox" name="website">{{profile.website}}</textarea>
   <p class="bio">Bio: </p>
-  <textarea form="profile" class="bioBox" name="bio">{{feed.bio}}</textarea>
+  <textarea form="profile" class="bioBox" name="bio">{{profile.bio}}</textarea>
   <p class ="button"><input class="saveButton" type="submit" value="Save Changes"></p>
 </form>
