@@ -8,12 +8,15 @@
     padding: 0;
     margin: 0;
   }
+  
   .HorizontalMenu li {
     font-family: 'Oswald', sans-serif;
-    font-size: 1.2em;
-    line-height: 40px;
-    height: 40px;
-    border-bottom: 1px solid #888;
+    width: 100px;
+    border-bottom: none;
+    height: 50px;
+    line-height: 50px;
+    font-size: 1em;
+    float: left;
   }
 
   .HorizontalMenu a {
@@ -32,21 +35,22 @@
     color: #444;
     cursor: default;
   }
-  .HorizontalMenu li {
-    width: 100px;
-    border-bottom: none;
-    height: 50px;
-    line-height: 50px;
-    font-size: 1em;
-  }
-  .HorizontalMenu li {
-    float: left;
-  }
+
   .HorizontalMenu ul {
     overflow: auto;
   }
   .HorizontalMenu {
     background-color: #444;
+  }
+
+  .Logout {
+    float: right;
+    width: 100px;
+    border-bottom: none;
+    height: 50px;
+    line-height: 50px;
+    font-size: 1em;
+    font-family: 'Oswald', sans-serif;
   }
   * {
     margin: 0;

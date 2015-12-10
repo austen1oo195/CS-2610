@@ -5,17 +5,6 @@ var querystring = require('querystring')
 var User        = require('../models/users')
 var Router      = express.Router();
 
-Router.get('/sign_out', function(req, res){
-  /*set access token to something obviously invalid so it will throw erros.
-    I couldn't get a blank string to work as the access token because it
-    would simply read that the token isn't there and try to return html
-    instead of json.
-  */
-  req.session.access_token = 'asdf';
-  res.redirect('/')
-  //need to insert popup box confirming sign-out
-})
-
 Router.get('/authorize', function(req, res){
   var qs = {
     client_id: cfg.client_id,

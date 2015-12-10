@@ -3,6 +3,18 @@ var request = require('request');
 var Users   = require('../models/users')
 var Router  = express.Router();
 
+Router.get('/sign_out', function(req, res){
+  /*set access token to something obviously invalid so it will throw erros.
+    I couldn't get a blank string to work as the access token because it
+    would simply read that the token isn't there and try to return html
+    instead of json.
+  */
+  req.session.access_token = 'asdf';
+  res.redirect('/')
+  //need to insert popup box confirming sign-out
+})
+
+
 Router.get('/dashboard', function(req, res, next) {
   var options = {
     url: 'https://api.instagram.com/v1/users/self/feed?access_token=' +
@@ -30,17 +42,33 @@ Router.get('/dashboard', function(req, res, next) {
 
 Router.get('/profile', function(req, res, next) {
   var user
-  Users.find(req.session.userId, function(document){
-    user = document
-
-    res.render('profile', {
-      active_profile: "active",
-      css: "\\CSS\\profile.css",
-      title: 'Profile',
-      profile: user
+  var options = {
+    url: 'https://api.instagram.com/v1/users/self/feed?access_token=' +
+      req.session.access_token
+  };
+  request.get(options, function(error, response, body){
+    try {
+      var feed = JSON.parse(body)
+      if (feed.meta.code > 200) {
+        return next(feed.meta.error_message);
+      }
+    }
+    catch(err) {
+      return next(err)
+    }
+    Users.find(req.session.userId, function(document){
+      user = document
+      res.render('profile', {
+        active_profile: "active",
+        css: "\\CSS\\profile.css",
+        title: 'Profile',
+        profile: user
+      });
     });
-  })
+  });
 });
+
+
 
 Router.get('/search', function(req, res, next){
   //options.url is used to make a request to that url with the access token to make sure
