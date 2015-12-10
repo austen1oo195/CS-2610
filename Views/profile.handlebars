@@ -2,15 +2,14 @@
   <img src="{{feed.profile_picture}}" kalt = "" />
 </div>
 
-<div class="content">
+<form id="profile"class="content" action="" method="post">
   <p class="name">Name: </p>
-  <textarea class="nameBox">{{feed.full_name}}</textarea>
+  <textarea form="profile" class="nameBox" name="full_name">{{feed.full_name}}</textarea>
   <p class="user">User: </p>
-  <textarea class="userBox">{{feed.username}}</textarea>
+  <textarea form="profile" class="userBox" name="username">{{feed.username}}</textarea>
   <p class="url">Url: </p>
-  <textarea class="urlBox">{{feed.website}}</textarea>
+  <textarea form="profile" class="urlBox" name="website">{{feed.website}}</textarea>
   <p class="bio">Bio: </p>
-  <textarea class="bioBox">{{feed.bio}}</textarea>
+  <textarea form="profile" class="bioBox" name="bio">{{feed.bio}}</textarea>
   <p class ="button"><input class="saveButton" type="submit" value="Save Changes"></p>
-
-</div>
+</form>

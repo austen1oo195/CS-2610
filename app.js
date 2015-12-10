@@ -5,6 +5,7 @@ var session     = require('express-session')
 var path        = require('path') //needed for static path
 var homeRoutes  = require('./Routes/homeRoutes.js')
 var userRoutes  = require('./Routes/userRoutes.js')
+var db          = require('./db')
 var request     = require('request')
 var port        = 3000;
 
@@ -40,9 +41,15 @@ app.use(function(err, req, res, next) {
         message: err
       })
     }
-
 });
 
-app.listen(port);
-
-console.log('Server running at http:127.0.0.1:' + port + '/')
+db.connect('mongodb://dbuser:password@ds033153.mongolab.com:33153/cs2610_app', function(err) {
+  if (err) {
+    console.log('Unable to connect to Mongo.')
+    process.exit(1)
+  } else {
+    app.listen(3000, function() {
+      console.log('Listening on port 3000...')
+    })
+  }
+})

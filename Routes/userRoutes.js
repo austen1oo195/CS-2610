@@ -105,4 +105,13 @@ Router.post('/search', function(req, res, next){
     });
   });
 });
+
+//successfully gets the form data on the profile page when submit is hit.
+//needs work to save user info to database. and fill out the form with the info
+//held in our database, rather than in instagram's database.
+Router.post('/profile', function(req, res, next){
+  var data = req.body
+  console.log(data)
+  res.redirect('/user/profile')
+})
 module.exports = Router;

@@ -2,6 +2,7 @@ var express     = require('express');
 var request     = require('request')
 var cfg         = require('../config')
 var querystring = require('querystring')
+var User        = require('../models/users')
 var Router      = express.Router();
 
 Router.get('/sign_out', function(req, res){
@@ -44,8 +45,30 @@ Router.get('/auth/finalize', function(req, res) {
 
   request.post(options, function(error, response, body) {
     var data = JSON.parse(body)
+    var user = data.user
+
     req.session.access_token = data.access_token
-    res.redirect('/user/dashboard')
+    req.session.userId = user.id
+
+    user._id = user.id
+    delete user.id
+    //insert into database
+    User.find(user._id, function(document){
+      if(!document){
+        User.insert(user, function(result){
+          
+          //just for verification in console that everything is good. Can be
+          //deleted later once everything is working.
+          console.log(result)
+          console.log(data.user)
+
+          res.redirect('/user/dashboard')
+        })
+      }else{
+        res.redirect('/user/dashboard')
+      }
+
+    })
   })
 })
 

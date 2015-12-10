@@ -18,7 +18,8 @@
   "homepage": "https://github.com/austen1oo195/CS-2610#readme",
   "dependencies": {
     "express": "^4.13.3",
-    "express-handlebars": "^2.0.1"
+    "express-handlebars": "^2.0.1",
+    "mongodb": "^2.1.0"
   },
   "devDependencies": {}
 }
