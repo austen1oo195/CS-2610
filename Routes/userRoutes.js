@@ -101,7 +101,6 @@ Router.get('/search', function(req, res, next){
 Router.post('/search', function(req, res, next){
   var tagName  = req.body.query;
 
-
   var options = {
     url: 'https://api.instagram.com/v1/tags/' + tagName +
       '/media/recent?access_token=' + req.session.access_token

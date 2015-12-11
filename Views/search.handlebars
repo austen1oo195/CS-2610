@@ -16,20 +16,28 @@
       </form>
     {{/each}}
   {{/if}}
-  
+
 </div>
 
-<form action="" method="post">
-  <div class="search">
+<div class="search">
+  <form action="" method="post">
     <input class="SearchBox" type="text" name="query" placeholder="Search..." required>
     <input class="button" type="submit" name="submit" value="Search">
-  </div>
-</form>
+  </form>
+
+  {{#if feed}}
+  <!-- this will be a form to submit to the save search route -->
+    <form class="" action="/user/search/save" method="post">
+      <button class="button" type="submit" name="">Save</button>
+    </form>
+  {{/if}}
+</div>
 
 <div class="border"> </div>
 
 <div class="Results">
   <h2>Search Results</h2>
 </div>
+
 
 {{> images }}
