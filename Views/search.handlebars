@@ -2,14 +2,21 @@
 
 <div class="saved">
   <h1>Saved Searches</h1>
-  <ul class="searches">
-    <li><a href='#'>#big cats</a></li>
-    <li><a href='#'>#small cats</a></li>
-    <li><a href='#'>#red cats</a></li>
-    <li><a href='#'>#blue cats</a></li>
-    <li><a href='#'>#dog cats</a></li>
-    <li><a href='#'>#cats cats</a></li>
-  </ul>
+  <form class="user-form" action="/search/add" method="post">
+    <input type="hidden" name="_id" value="{{user._id}}">
+  </form>
+
+  {{#if user.tags}}
+    {{#each user.tags}}
+      <form action="/search/remove" method="post">
+        {{this}}
+        <input type="hidden" name="tag" value="{{this}}">
+        <button type="submit">Delete</button>
+
+      </form>
+    {{/each}}
+  {{/if}}
+  
 </div>
 
 <form action="" method="post">
