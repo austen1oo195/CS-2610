@@ -1,13 +1,25 @@
+* {
+  margin: 0, 0, 0, 0;
+  padding: 0, 0, 0, 0;
+}
+html {
+  height: 100%;
+  margin: 0;
+}
 /*General Page Syling*/
 body {
   background-color: white;
+  height: 100%;
   margin: 0;  /*gets rid of default margins/padding on page*/
   padding: 0;
 }
 
 /*Title Header*/
 .title {
+  -webkit-margin-after: 0;
   margin-top: 0;
+  padding-top: 120px;
+  padding-bottom: 30px;
   text-align: center;
   border-bottom: none;
   font-size: 1em;
@@ -20,26 +32,24 @@ body {
 /*General*/
 .box-outer {
   width: 100%;
-  margin-top: 10%;
+  height: 100%;
 }
 
 .box {
+  top: 50%;
+  margin-top: -250px;
+  height: 500px;
   position: relative;
   text-align: center;
-  border: 1px solid black;
-  width: 570px;
-  height: 300px;;
-  margin: 0 auto;
-  padding-top: 40px;
-  padding-bottom: 40px;
   background-color: #444;
 }
 
 /*Buttons*/
 .buttons{
   position: absolute;
-  bottom: 40px;
-  left: 185px;
+  left: 50%;
+  margin-left: -100px;
+  top: 70%;
 }
 
 .buttons a{
@@ -47,7 +57,7 @@ body {
   font-family: 'Oswald', sans-serif;
   font-size: 1.2em;
   line-height: 40px;
-  height: 40px;
+  height: 38px;
   border: 1px solid #888;
   text-decoration: none;
   color: #fff;
@@ -56,14 +66,7 @@ body {
   width: 200px;
 }
 
-.login {
-  margin: auto;
-  margin-bottom: 10px;
-}
-
-.register {
-  margin: auto;
-}
+.login {}
 
 .box a:hover {
   background-color: #005f5f;
@@ -77,11 +80,14 @@ body {
 
 /*Box Text*/
 .greeting{
+  -webkit-margin-after: 0;
+  text-align: center;
   font-family: 'Oswald', sans-serif;
   font-size: 1.0em;
-  width: 80%;
-  margin: auto;
+  width: 60%;
+  margin-left: 20%;
+  margin-right: 20%;
+  margin-top: 30px;
   color: #fff;
-  margin-top: 35px;
-  padding-bottom: 20px;
+  margin-top: 0;
 }

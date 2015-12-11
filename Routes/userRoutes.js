@@ -89,16 +89,21 @@ Router.get('/search', function(req, res, next){
       return next(err)
     }
 
-  	res.render('search', {
-      active_search: "active",
-      css: "\\CSS\\search.css",
-  		title: 'Search',
+    Users.find(req.session.userId, function(document){
+      user = document
+    	res.render('search', {
+        active_search: "active",
+        css: "\\CSS\\search.css",
+    		title: 'Search',
+        profile: user
+      });
     });
 	});
 });
 
 Router.post('/search', function(req, res, next){
   var tagName  = req.body.query;
+  var saveSearch = req.body.save;
 
   var options = {
     url: 'https://api.instagram.com/v1/tags/' + tagName +
@@ -115,11 +120,18 @@ Router.post('/search', function(req, res, next){
       return next(err)
     }
 
-    res.render('search', {
-      active_search: "active",
-      css: "\\CSS\\search.css",
-      title: 'Search',
-      feed: feed.data
+    Users.find(req.session.userId, function(document){
+      user = document
+      user.savedSearches += tagName;
+
+      res.render('search', {
+        active_search: "active",
+        css: "\\CSS\\search.css",
+        title: 'Search',
+        feed: feed.data,
+        tag: tagName,
+        profile: user
+      });
     });
   });
 });

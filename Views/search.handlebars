@@ -3,12 +3,14 @@
 <div class="saved">
   <h1>Saved Searches</h1>
   <ul class="searches">
-    <li><a href='#'>#big cats</a></li>
-    <li><a href='#'>#small cats</a></li>
-    <li><a href='#'>#red cats</a></li>
-    <li><a href='#'>#blue cats</a></li>
-    <li><a href='#'>#dog cats</a></li>
-    <li><a href='#'>#cats cats</a></li>
+    {{#each profile.savedSearches}}
+      <div class="row">
+        <form action="" method="post">
+          <li><a href='#'>cats</a></li> {{!this.savedSearches}}
+          <input class="button" type="submit" name="submit" value="X">
+        </form>
+      </div>
+    {{/each}}
   </ul>
 </div>
 
@@ -21,8 +23,14 @@
 
 <div class="border"> </div>
 
-<div class="Results">
-  <h2>Search Results</h2>
-</div>
+{{! post to save the search }}
+<form action="" method="post">
+  <div class="Results">
+    {{#if tag }}
+      <h2>Results for: {{tag}}</h2>
+      <input class="button" type="submit" name="save" value="Save">
+    {{/if}}
+  </div>
+</form>
 
 {{> images }}
