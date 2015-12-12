@@ -39,3 +39,20 @@ exports.update = function(user, callback) {
     callback()
   })
 }
+
+exports.addTag = function(userId, tag, callback) {
+  // Get the users collection
+  var collection = db.get().collection('users')
+  // Add the tag
+  collection.update(
+    {'_id': userId},
+    // { $push: { tags: tag }},
+    { $addToSet: { savedSearches: tag}},
+    function(err, result) {
+      assert.equal(err, null)
+      assert.equal(1, result.result.n)
+      console.log('Added 1 tag to a document in the users collection')
+      callback()
+    }
+  )
+}

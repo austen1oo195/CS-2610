@@ -6,31 +6,29 @@
   <ul class="searches">
     {{#each profile.savedSearches}}
       <div class="row">
-        <form action="" method="post">
-          <li><a href='#'>cats</a></li> {{!this.savedSearches}}
+        <form action="/search/delete" method="post">
+          <li><a href='#'>{{this}}</a></li>
           <input class="button" type="submit" name="submit" value="X">
         </form>
       </div>
     {{/each}}
   </ul>
 
-{{!
+<!--
   <form class="user-form" action="/search/add" method="post">
     <input type="hidden" name="_id" value="{{user._id}}">
-{{!  </form>
+  </form> -->
 
-  {{#if user.tags}}
-{{!    {{#each user.tags}}
-{{!      <form action="/search/remove" method="post">
+  <!-- {{#if user.tags}}
+    {{#each user.tags}}
+      <form action="/search/remove" method="post">
         {{this}}
-  {{!      <input type="hidden" name="tag" value="{{this}}">
-{{!        <button type="submit">Delete</button>
-
+        <input type="hidden" name="tag" value="{{this}}">
+        <button type="submit">Delete</button>
       </form>
     {{/each}}
-{{!  {{/if}}
+  {{/if}} -->
 
-}}}}
 </div>
 
 <div class="search">
@@ -39,21 +37,24 @@
     <input class="button" type="submit" name="submit" value="Search">
   </form>
 
-  {{#if feed}}
   <!-- this will be a form to submit to the save search route -->
+<!--
+  {{#if feed}}
     <form class="" action="/user/search/save" method="post">
       <button class="button" type="submit" name="">Save</button>
     </form>
-  {{/if}}
+  {{/if}}-->
 </div>
 
 <div class="border"> </div>
 
 {{! post to save the search }}
-<form action="" method="post">
+
+<form action="/user/search/save" method="post">
   <div class="Results">
     {{#if tag }}
       <h2>Results for: {{tag}}</h2>
+      <input type="hidden" value="{{tag}}" name="tag">
       <input class="button" type="submit" name="save" value="Save">
     {{/if}}
   </div>
