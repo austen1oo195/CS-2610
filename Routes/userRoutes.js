@@ -133,18 +133,6 @@ Router.post('/search', function(req, res, next){
       });
     });
   });
-  //
-  // if(req.session.userId){
-  //   Users.find(req.session.userId, function(document){
-  //     if(!document) return res.redirect('/')
-  //     res.render('search', {
-  //       user: document
-  //     })
-  //   })
-  // } else {
-  //   res.redirect('/')
-  // }
-
 });
 
 //trying to get the add and remove functions to work... keep having problems with rendering the right page and making it add the tags to the left column
@@ -169,21 +157,21 @@ Router.post('/search/save', function(req, res, next){
     }
 
     Users.addTag(userId, tag, function(){
-      req.session.tag = tag
       res.redirect('/user/search')
     })
   })
 })
 
-/*
-Router.post('/search/remove', function(req, res, next){
+
+Router.post('/search/delete', function(req, res, next){
   var tag = req.body.tag
   var userId = req.session.userId
+
   Users.removeTag(userId, tag, function(){
-    res.redirect('/search')
+    res.redirect('/user/search')
   })
 })
-*/
+
 
 //successfully gets the form data on the profile page when submit is hit.
 //needs work to save user info to database. and fill out the form with the info
